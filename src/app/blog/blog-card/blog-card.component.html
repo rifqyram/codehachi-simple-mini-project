@@ -1,0 +1,23 @@
+<ng-container *ngFor="let item of articles">
+  <div class="blog-card">
+    <div class="card">
+      <div class="image-card">
+        <img src="{{item.image}}" alt="{{item.title}}">
+        <span class="category-card">{{item.category | titlecase}}</span>
+      </div>
+      <div class="content-card">
+        <h3 routerLink="/blog/{{item.url}}" class="title-card">
+          {{item.title| truncate | titlecase}}
+        </h3>
+        <div class="detail-post-card">
+          <span class="author bi bi-person-fill"> {{item.author | titlecase}}</span>
+          <span class="post-date bi bi-clock"> {{item.createdAt| date}}</span>
+        </div>
+        <p class="content-text">
+          {{item.content| truncate}}
+        </p>
+        <a class="link-blog-item" routerLink="/blog/{{item.url}}" (click)="getArticle(item.articleId)">Read More</a>
+      </div>
+    </div>
+  </div>
+</ng-container>

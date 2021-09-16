@@ -1,0 +1,12 @@
+.guest-book-container {
+  display: flex;
+
+  .guest-book {
+    width: 70%;
+    margin: 0 auto;
+
+    .guest-cook-title {
+      margin: 1em 0;
+    }
+  }
+}

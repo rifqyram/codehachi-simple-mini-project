@@ -1,0 +1,83 @@
+$primary-color: #00A19D;
+$secondary-color: #003638;
+$text-hover: #FFB344;
+
+.user-management-container {
+  display: flex;
+
+  .user-management {
+    width: 70%;
+    margin: 0 auto;
+
+    h2 {
+      margin: 1em 0;
+    }
+
+    .user-detail {
+      display: grid;
+      gap: 1em;
+      margin-bottom: 1em;
+      color: #333;
+
+      .avatar {
+        width: 100%;
+
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+        }
+      }
+
+      .user-data {
+        display: grid;
+        gap: 1em;
+
+        .input-container {
+          display: grid;
+
+          input {
+            padding: .5em 1em;
+            border-radius: 8px;
+            border: 1px solid $text-hover;
+            font-size: 1em;
+            color: #333;
+            outline: none;
+
+            &:read-only {
+              background-color: #eee;
+              color: #5d646b;
+            }
+          }
+
+          .username-inp {
+            cursor: not-allowed;
+          }
+
+          .note-user {
+            font-size: .9em;
+            color: #5d646b;
+          }
+
+        }
+
+        .btn-update-profile {
+          padding: .5em 1em;
+          background-color: $text-hover;
+          border: none;
+          font-size: 1em;
+          font-weight: bold;
+          color: white;
+          border-radius: 8px;
+          cursor: pointer;
+
+          &:disabled {
+            background-color: #f3cd94;
+          }
+        }
+      }
+    }
+
+
+  }
+}

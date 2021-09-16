@@ -1,0 +1,23 @@
+<div class="user-management-container">
+  <app-sidenav></app-sidenav>
+  <div class="user-management">
+    <h2>User Management</h2>
+    <div class="user-detail">
+      <div class="avatar">
+        <img src="assets/images/image-not-found.png" alt="">
+      </div>
+      <form [formGroup]="form" (ngSubmit)="submit()" class="user-data">
+        <div class="input-container">
+          <label for="username">Username</label>
+          <input class="username-inp" type="text" readonly value="rifqyram" formControlName="{{formField.USERNAME}}">
+          <span class="note-user">Untuk saat ini anda belum bisa mengubah username</span>
+        </div>
+        <div class="input-container">
+          <label for="username">Password</label>
+          <input type="password" value="password" formControlName="{{formField.PASSWORD}}">
+        </div>
+        <button type="submit" class="btn-update-profile" [disabled]="form.invalid">Update Profile</button>
+      </form>
+    </div>
+  </div>
+</div>

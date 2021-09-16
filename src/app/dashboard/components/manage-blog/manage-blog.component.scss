@@ -1,0 +1,124 @@
+$primary-color: #00A19D;
+$secondary-color: #003638;
+$text-hover: #FFB344;
+
+.manage-blog-container {
+  display: flex;
+
+  .manage-blog {
+    width: 70%;
+    margin: 0 auto;
+
+    .title-dashboard-manage-blog {
+      font-size: 2em;
+      margin: 1em 0;
+    }
+
+    .create-btn {
+      display: flex;
+
+      button {
+        padding: .5em 1em;
+        background-color: $text-hover;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 1em;
+        margin-bottom: 1em;
+
+        &:active {
+          box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
+        }
+      }
+    }
+
+    .blog-item-manage {
+      width: 100%;
+
+      .card-item {
+        width: 100%;
+        height: 150px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        border-radius: 12px;
+        box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.25);
+        margin-bottom: 1em;
+        padding: 1em;
+        color: #333;
+
+        .image-card {
+          width: 200px;
+          place-self: center;
+
+          img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+          }
+        }
+
+        .content-card {
+          display: grid;
+
+          .action-card {
+            display: flex;
+            gap: 1em;
+            align-items: center;
+
+            button {
+              padding: .5em 1em;
+              border: none;
+              color: white;
+              font-size: 1em;
+              font-weight: bold;
+              border-radius: 8px;
+              cursor: pointer;
+
+              &.delete-blog {
+                background-color: #d33;
+              }
+
+              &.update-blog {
+                background-color: $primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 768px) {
+  .manage-blog-container {
+    .manage-blog {
+      width: 70%;
+
+      .title-dashboard-manage-blog {
+        font-size: 1.5em;
+      }
+
+      .blog-item-manage {
+
+        .card-item {
+          display: flex;
+          flex-direction: column;
+          height: auto;
+          gap: 1em;
+          padding: .5em;
+
+          .image-card {
+            width: 100%;
+          }
+
+          .content-card {
+            display: grid;
+            gap: 1em;
+          }
+        }
+      }
+    }
+  }
+}

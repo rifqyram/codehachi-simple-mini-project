@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="blog-from-wrapper">
+  <div class="blog-form">
+    <h3 class="form-title">Edit Article</h3>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="left-input">
+        <div class="input-container">
+          <input type="text" placeholder="Title" maxlength="60" formControlName="{{formField.TITLE}}">
+        </div>
+        <div class="input-container">
+          <input type="text" maxlength="20" placeholder="Category" formControlName="{{formField.CATEGORY}}">
+        </div>
+      </div>
+      <div class="right-input">
+        <div class="input-container">
+          <textarea type="text" placeholder="Content" rows="7" formControlName={{formField.CONTENT}}></textarea>
+        </div>
+      </div>
+      <button type="submit" class="submit-blog-btn" [disabled]="form.invalid">Update</button>
+    </form>
+  </div>
+</div>

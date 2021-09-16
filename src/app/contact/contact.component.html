@@ -1,0 +1,21 @@
+<app-header></app-header>
+<div class="contact-container">
+  <div class="contact">
+    <div class="contact-image">
+      <img src="assets/images/contact-bg.jpg" alt="contact-bg">
+    </div>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <h3 class="title-form-contact">Have Some Question ?</h3>
+      <div class="input-container">
+        <input type="text" placeholder="Username" formControlName="{{formField.USERNAME}}">
+      </div>
+      <div class="input-container">
+        <input type="email" placeholder="Email" formControlName="{{formField.EMAIL}}">
+      </div>
+      <div class="input-container">
+        <textarea type="text" placeholder="Your Question" rows="8" formControlName="{{formField.QUESTION}}"></textarea>
+      </div>
+      <button class="btn-submit-contact" [disabled]="form.invalid">Submit</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="sidenav-container">
+  <div class="side-nav">
+    <h2 class="user-dashboard">Welcome! {{currentUser.username}}</h2>
+    <ul>
+      <li><a class="bi bi-app-indicator" [routerLinkActive]="['is-active']" [routerLinkActiveOptions]="{exact: true}"
+          routerLink="/dashboard"> <span> Home</span></a>
+      <li><a class="bi bi-person" [routerLinkActive]="['is-active']" routerLink="/auth/profile"> <span> My
+            Profile</span></a>
+      </li>
+      <li><a class="bi bi-puzzle" [routerLinkActive]="['is-active']" routerLink="/dashboard/blog"> <span> Manage
+            Blog</span></a></li>
+      <li><a class="bi bi-hand-thumbs-up" [routerLinkActive]="['is-active']" routerLink="/dashboard/donation">
+          <span> Manage
+            Donation</span></a></li>
+      <li><a class="bi bi-book" [routerLinkActive]="['is-active']" routerLink="/dashboard/guest-book"> <span> Guest
+            Book</span></a>
+      <li><a class="bi bi-box-arrow-left" routerLink="/"> <span> Exit Dashboard</span></a>
+      </li>
+    </ul>
+  </div>
+</div>

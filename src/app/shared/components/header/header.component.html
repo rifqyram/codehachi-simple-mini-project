@@ -1,0 +1,44 @@
+<header class="header-wrapper">
+  <div class="header">
+    <div class="logo">
+      <h1>CodeHachi</h1>
+    </div>
+    <div class="nav" [ngClass]="isActive ? 'is-active' : ''">
+      <ul>
+        <li><a [routerLink]="['/']" [routerLinkActive]="['is-active']"
+            [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a [routerLink]="['/donation']" [routerLinkActive]="['is-active']">Donation</a></li>
+        <li><a [routerLink]="['/blog']" [routerLinkActive]="['is-active']">Blog</a></li>
+        <li><a [routerLink]=" ['/contact']" [routerLinkActive]="['is-active']">Contact </a> </li>
+        <li><a [routerLink]="['/about']" [routerLinkActive]="['is-active']">About</a></li>
+        <li class="user-dropdown" *ngIf="currentUser; else empty"><span
+            (click)="toggleDropDown()">{{currentUser.username}}</span>
+          <div class="dropdown" [ngClass]="dropDown ? 'is-active' : ''">
+            <ul>
+              <li><a routerLink="/dashboard">Dashboard</a></li>
+              <li><a routerLink="/auth/profile">My Profile</a></li>
+              <li><a (click)="logout()">Logout</a></li>
+            </ul>
+          </div>
+        </li>
+        <ng-template #empty>
+          <li><a [routerLink]="['/auth/login']" [routerLinkActive]="['is-active']">Login</a></li>
+        </ng-template>
+
+
+      </ul>
+    </div>
+    <div (click)=" toggle()" class="toggle-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+<div class="header-waves" style="background-color: #00A19D; display: flex;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#FFFFFF" fill-opacity="1"
+      d="M0,64L60,90.7C120,117,240,171,360,165.3C480,160,600,96,720,96C840,96,960,160,1080,181.3C1200,203,1320,181,1380,170.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+    </path>
+  </svg>
+</div>

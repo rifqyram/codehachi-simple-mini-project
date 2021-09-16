@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div class="donation-form-container">
+  <div class="donation-form">
+    <form [formGroup]="form" (click)="submit()">
+      <h3 class="title-form">Donate Form</h3>
+      <div class="input-container">
+        <input type="number" min="1000" placeholder="Amount*" formControlName="{{formField.AMOUNT}}">
+      </div>
+      <div class="input-container">
+        <input type="text" placeholder="Message" maxlength="30" formControlName="{{formField.MESSAGE}}">
+      </div>
+
+      <button type="submit" class="btn-donate" [disabled]="form.invalid">Donate</button>
+    </form>
+  </div>
+</div>

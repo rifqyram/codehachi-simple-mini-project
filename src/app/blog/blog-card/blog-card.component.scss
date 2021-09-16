@@ -1,0 +1,115 @@
+$primary-color: #00A19D;
+$secondary-color: #003638;
+$text-hover: #FFB344;
+
+.blog-card {
+  margin-bottom: 1em;
+  width: 100%;
+
+  .card {
+    display: flex;
+    width: 100%;
+    gap: 1em;
+    color: #333;
+
+    .image-card {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+
+      .category-card {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-20px, 20px);
+        color: white;
+        background-color: $text-hover;
+        padding: .5em;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        filter: brightness(60%);
+        transition: .4s ease;
+        background-color: black;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .content-card {
+      width: 100%;
+      display: grid;
+
+      h3 {
+        cursor: pointer;
+      }
+
+      .title-card {
+        &:hover {
+          color: $text-hover;
+        }
+      }
+
+      .detail-post-card {
+        display: flex;
+        justify-content: space-between;
+        color: $text-hover;
+        font-size: 12px;
+      }
+
+      .content-text {
+        height: 60px;
+        font-size: 14px;
+      }
+
+      .link-blog-item {
+        background-color: black;
+        width: fit-content;
+        height: fit-content;
+        padding: .5em 1em;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: .2s ease;
+
+        &:hover {
+          background-color: $text-hover;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 576px) {
+  .blog-card {
+    .card {
+
+      .content-card {
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+        height: max-content;
+
+        .title-card {
+          font-size: 1em;
+        }
+
+        .detail-post-card {
+          font-size: .8em;
+        }
+
+        .content-text {
+          display: none;
+        }
+      }
+    }
+  }
+}

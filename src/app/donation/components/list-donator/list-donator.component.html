@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="donator-list-conatiner">
+  <div class="donator-list">
+    <h2 class="title-donator-list">Donator List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Nama</th>
+          <th>Donasi</th>
+          <th>Pesan</th>
+          <th>Tanggal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of list | paginate: {
+            itemsPerPage: limit,
+            currentPage: page,
+            totalItems: config.count
+        }; let i = index">
+          <td>{{i + 1}}</td>
+          <td>{{item.name | titlecase}}</td>
+          <td>{{item.amount | numberWithComma}}</td>
+          <td>{{item.message | titlecase}}</td>
+          <td>{{item.donatedAt | date}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      <pagination-controls previousLabel="Prev" nextLabel="Next" [responsive]="true"
+        (pageChange)="handlePageChange($event)">
+      </pagination-controls>
+    </div>
+  </div>
+</div>

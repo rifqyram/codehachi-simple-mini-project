@@ -1,0 +1,62 @@
+$primary-color: #00A19D;
+$secondary-color: #003638;
+$text-hover: #FFB344;
+
+.donator-list-conatiner {
+  width: 100%;
+  margin-bottom: 2em;
+
+  .donator-list {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .title-donator-list {
+      margin: 1em 0;
+      font-size: 2em;
+    }
+
+    table {
+      width: 100%;
+      text-align: left;
+      border-collapse: collapse;
+      margin-bottom: 1em;
+
+      thead {
+        background-color: $text-hover;
+        color: white;
+        text-transform: uppercase;
+
+        tr th {
+          padding: .5em 1em;
+        }
+      }
+
+      tbody {
+        tr {
+          td {
+            padding: .5em 1em;
+          }
+
+          &:nth-child(odd) {
+            background-color: #eee;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 576px) {
+  .donator-list-conatiner {
+    .donator-list {
+
+      table {
+        display: block;
+        width: 100%;
+        table-layout: fixed;
+        overflow-x: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="login-container">
+  <div class="login-form">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#fff" fill-opacity="1"
+        d="M0,128L48,122.7C96,117,192,107,288,117.3C384,128,480,160,576,154.7C672,149,768,107,864,80C960,53,1056,43,1152,80C1248,117,1344,203,1392,245.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+      </path>
+    </svg>
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+      <h3 class="title-form">Login</h3>
+      <div class="input-container">
+        <i class="bi bi-person-fill"></i>
+        <input type="text" name="username" id="username" placeholder="Username"
+          formControlName="{{formField.USERNAME}}">
+      </div>
+      <div class="input-container">
+        <i class="bi bi-shield-lock-fill"></i>
+        <input type="password" placeholder="Password" formControlName="{{formField.PASSWORD}}">
+      </div>
+      <div class="form-info">
+        <p>Don't have any account? <a routerLink="/auth/signup">Sign Up</a></p>
+      </div>
+      <button type="submit" class="btn-submit-login" [disabled]="form.invalid">Login</button>
+    </form>
+    <div class="image-form">
+      <img src="assets/images/6531.jpg" alt="bg-form">
+    </div>
+  </div>
+</div>

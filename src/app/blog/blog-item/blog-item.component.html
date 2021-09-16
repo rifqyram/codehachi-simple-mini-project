@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="blog-item-container">
+  <div class="wrapper">
+    <div class="blog-item">
+      <div class="meta-item">
+        <img src="{{blog.image}}" alt="{{blog.title}}">
+        <h2 class="title-item">{{blog.title | titlecase}}</h2>
+        <p class="author-item bi bi-person-fill"> {{blog.author | titlecase}}</p>
+        <p class="date-item bi bi-clock"> {{blog.createdAt | date}}</p>
+        <p class="category-item">{{blog.category}}</p>
+      </div>
+      <div class="content-item">
+        <p class="content">{{blog.content}}</p>
+      </div>
+    </div>
+    <div class="blog-aside">
+      <app-blog-aside></app-blog-aside>
+    </div>
+  </div>
+</div>
